@@ -1,20 +1,24 @@
 #include <Arduino.h>
 
-#define LORA_V1_0_OLED  0
+#define LORA_V1_0_OLED  1
 #define LORA_V1_2_OLED  0
 #define LORA_V1_6_OLED  0
-#define LORA_V2_0_OLED  1
+#define LORA_V2_0_OLED  0
 
+#ifndef LORA_SENDER
 #define LORA_SENDER 0
 // #define LORA_SENDER 1
+#endif
 
-// #define LORA_PERIOD 868  
-// #define LORA_PERIOD 915     
-#define LORA_PERIOD 433  
+#ifndef LORA_PERIOD
+#define LORA_PERIOD 868
+// #define LORA_PERIOD 915
+// #define LORA_PERIOD 433
+#endif
 
 #if LORA_V1_0_OLED
-#include <Wire.h> 
-#include "SSD1306Wire.h" 
+#include <Wire.h>
+#include "SSD1306Wire.h"
 #define OLED_CLASS_OBJ  SSD1306Wire
 #define OLED_ADDRESS    0x3C
 #define OLED_SDA    4
@@ -26,8 +30,8 @@
 #define CONFIG_NSS  18
 #define CONFIG_RST  14
 #define CONFIG_DIO0 26
-// !    There are two versions of TTGO LoRa V1.0, 
-// !    the 868 version uses the 3D WiFi antenna, and the 433 version uses the PCB antenna. 
+// !    There are two versions of TTGO LoRa V1.0,
+// !    the 868 version uses the 3D WiFi antenna, and the 433 version uses the PCB antenna.
 // !    You need to change the frequency according to the board.
 
 #define SDCARD_MOSI -1
@@ -37,8 +41,8 @@
 
 #elif LORA_V1_2_OLED
 //Lora V1.2 ds3231
-#include <Wire.h> 
-#include "SSD1306Wire.h" 
+#include <Wire.h>
+#include "SSD1306Wire.h"
 #define OLED_CLASS_OBJ  SSD1306Wire
 #define OLED_ADDRESS    0x3C
 #define OLED_SDA    21
@@ -59,8 +63,8 @@
 #define ENABLE_DS3231
 
 #elif LORA_V1_6_OLED
-#include <Wire.h> 
-#include "SSD1306Wire.h" 
+#include <Wire.h>
+#include "SSD1306Wire.h"
 #define OLED_CLASS_OBJ  SSD1306Wire
 #define OLED_ADDRESS    0x3C
 #define OLED_SDA    21
@@ -80,8 +84,8 @@
 #define SDCARD_CS   13
 
 #elif LORA_V2_0_OLED
-#include <Wire.h> 
-#include "SSD1306Wire.h" 
+#include <Wire.h>
+#include "SSD1306Wire.h"
 #define OLED_CLASS_OBJ  SSD1306Wire
 #define OLED_ADDRESS    0x3C
 #define OLED_SDA    21
