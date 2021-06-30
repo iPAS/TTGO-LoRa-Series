@@ -1,8 +1,24 @@
-TTGO LOAR Series
-==============================
-![](1.png)
+Testing Code for TTGO LoRa Series
+=================================
+![](figures/all.png)
 
-## BOARD PINS
+I forked this repository as the tester for TTGO LoRa32 v1.0 board.
+In case another version, please verify the setting inside board_def.h.
+
+Just the LoRa transceiver and OLED that is tested,
+    for other parts of the module, I discard the code.
+
+
+## TTGO LoRa32 OLED V1.0
+
+![](https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/10/TTGO-LoRa-ESP32-Dev-Board-Arduino-IDE-Project.jpg?resize=1024%2C576&quality=100&strip=all&ssl=1)
+
+
+![](figures/v1.png)
+
+
+## Boards' pins
+
 | Name        | V1.0 | V1.2(T-Fox) | V1.6 | V2.0 |
 | ----------- | ---- | ----------- | ---- | ---- |
 | OLED RST    | 16   | N/A         | N/A  | N/A  |
@@ -34,14 +50,22 @@ TTGO LOAR Series
 
 - Set the corresponding macro definition according to the lora frequency of the actual module
     ```
-    #define LORA_PERIOD 433  
-    // #define LORA_PERIOD 868  
-    // #define LORA_PERIOD 915     
+    #define LORA_PERIOD 433
+    // #define LORA_PERIOD 868
+    // #define LORA_PERIOD 915
     ```
 
 - Sender definition `LORA_SENDER` is 1, 0 is receiving
 
+
 ## Install the following dependency library files:
+
 - [arduino-LoRa](https://github.com/sandeepmistry/arduino-LoRa)
 - [oled-ssd1306](https://github.com/ThingPulse/esp8266-oled-ssd1306)
 
+
+## Other references
+
+- [TTGO LoRa32 SX1276 OLED Board: Getting Started with Arduino IDE](
+    https://randomnerdtutorials.com/ttgo-lora32-sx1276-arduino-ide/)
+- [Product Webpage](http://www.lilygo.cn/prod_view.aspx?TypeId=50003&Id=1134&FId=t3:50003:3)
